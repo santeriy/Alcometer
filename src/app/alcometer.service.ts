@@ -73,5 +73,4 @@ export class AlcometerService {
   public getProm() {
     return this.prom;
   }
-
 }

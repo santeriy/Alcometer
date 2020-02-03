@@ -29,5 +29,4 @@ export class HomePage {
   ionViewDidEnter() {
     this.alcometerService.ionViewDidEnter();
   }
-
 }
