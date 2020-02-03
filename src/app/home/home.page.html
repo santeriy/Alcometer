@@ -1,14 +1,42 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Alcometer
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label>Weight</ion-label>
+      <ion-input [(ngModel)]="weight" type="number" step="1" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select [(ngModel)]="gender" placeholder="Select one">
+        <ion-select-option value="1">Female</ion-select-option>
+        <ion-select-option value="2">Male</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Time</ion-label>
+      <ion-select [(ngModel)]="time" placeholder="Select time">
+        <ion-select-option *ngFor="let item of alcometerService.time_arr" value="{{item.value}}">{{item.description}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Bottles</ion-label>
+      <ion-select [(ngModel)]="bottles" placeholder="Select quantity">
+        <ion-select-option *ngFor="let item of alcometerService.bottles_arr" value="{{item.value}}">{{item.description}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item >
+      Promilles
+      {{alcometerService.getProm() | number: '1.2-2'}}
+    </ion-item>
+  </ion-list>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <ion-button color="dark" (click)="calculate()">Calculate</ion-button>
   </div>
 </ion-content>
