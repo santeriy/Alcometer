@@ -22,21 +22,23 @@
     <ion-item>
       <ion-label>Time</ion-label>
       <ion-select [(ngModel)]="time" placeholder="Select time">
-        <ion-select-option *ngFor="let item of alcometerService.time_arr" value="{{item.value}}">{{item.description}}</ion-select-option>
+        <ion-select-option *ngFor="let item of alcometerService.time_arr" value="{{item.value}}">{{item.description}}
+        </ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label>Bottles</ion-label>
       <ion-select [(ngModel)]="bottles" placeholder="Select quantity">
-        <ion-select-option *ngFor="let item of alcometerService.bottles_arr" value="{{item.value}}">{{item.description}}</ion-select-option>
+        <ion-select-option *ngFor="let item of alcometerService.bottles_arr" value="{{item.value}}">{{item.description}}
+        </ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-item >
+    <ion-item>
       Promilles
       {{alcometerService.getProm() | number: '1.2-2'}}
     </ion-item>
   </ion-list>
   <div class="ion-padding">
-    <ion-button color="blue" (click)="calculate()">Calculate</ion-button>
+    <ion-button color="primary" (click)="calculate()">Calculate</ion-button>
   </div>
 </ion-content>

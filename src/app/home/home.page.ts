@@ -23,7 +23,6 @@ export class HomePage {
     this.alcometerService.setBottles(this.bottles);
     this.alcometerService.setTime(this.time);
     this.alcometerService.calculate();
-
   }
 
   ionViewDidEnter() {
