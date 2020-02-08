@@ -54,6 +54,10 @@ export class AlcometerService {
     }
   }
 
+  public getProm() {
+    return this.prom;
+  }
+
   public setWeight(value) {
     this.weight = value;
   }
@@ -68,9 +72,5 @@ export class AlcometerService {
 
   public setBottles(value) {
     this.bottles = value;
-  }
-
-  public getProm() {
-    return this.prom;
   }
 }
